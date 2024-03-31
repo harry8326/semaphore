@@ -1,12 +1,8 @@
 - hosts: vms
+  become: true
   pre_tasks:
-    # for windows
-    - win_ping:
-      ignore_errors: true
-    # for linux
     - ping:
       ignore_errors: true
-  become: true
 
   tasks:
   - name: apt update
