@@ -1,5 +1,6 @@
 - name: install latest qemu-guest-agent
   hosts: all
+  ignore_unreachable: yes
   tasks:
     - name: qemu-guest-agent
       apt:
