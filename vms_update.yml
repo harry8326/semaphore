@@ -1,7 +1,7 @@
 - hosts: vms
   pre_tasks:
    - ping:
-    ignore_errors: true
+      ignore_errors: true
   become: true
 
   tasks:
