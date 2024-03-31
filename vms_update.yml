@@ -1,5 +1,11 @@
 - hosts: vms
-  ignore_unreachable: yes
+  pre_tasks:
+    # for windows
+    - win_ping:
+      ignore_errors: true
+    # for linux
+    - ping:
+      ignore_errors: true
   become: true
 
   tasks:
