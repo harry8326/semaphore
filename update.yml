@@ -1,5 +1,6 @@
 - hosts: all
   ignore_unreachable: yes
+  become: true
 
   tasks:
   - name: apt update
