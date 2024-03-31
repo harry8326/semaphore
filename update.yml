@@ -23,6 +23,7 @@
     stat: path=/var/run/reboot-required get_md5=no
 
   - name: Reboot if kernel updated
+    ignore_unreachable: yes
     reboot:
       msg: "Reboot initiated by Ansible for kernel updates"
       connect_timeout: 5
