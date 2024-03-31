@@ -1,5 +1,6 @@
 - hosts: all
   become: true
+  ignore_unreachable: yes
   tasks:
   - name: Update and upgrade apt packages
     apt:
