@@ -1,4 +1,5 @@
 - hosts: vms
+  ignore_unreachable: true
   become: true
 
   tasks:
