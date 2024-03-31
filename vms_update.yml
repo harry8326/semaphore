@@ -1,9 +1,8 @@
 - hosts: vms
-  become: true
-
-pre_tasks:
+  pre_tasks:
    - ping:
     ignore_errors: true
+  become: true
 
   tasks:
   - name: apt update
