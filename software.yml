@@ -1,10 +1,17 @@
-- name: install latest qemu-guest-agent
+- name: Softwareinstall & Settings
   hosts: all
   ignore_unreachable: yes
+  
   tasks:
+  
     - name: qemu-guest-agent
       apt:
         name: qemu-guest-agent
         state: present
         update_cache: true
+      become: true
+
+    - name: set timezone to Europe/Vienna
+      timezone:
+        name: Europe/Vienna
       become: true
