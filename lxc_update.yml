@@ -1,5 +1,6 @@
 - hosts: lxc
   ignore_unreachable: yes
+  ignore_errors: True
   become: true
 
   tasks:
