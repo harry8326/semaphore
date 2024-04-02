@@ -1,17 +1,27 @@
 - name: Create VM Small on Proxmox
 - hosts: proxmox
   community.general.proxmox_kvm
-  api_user: "{{ proxmox_api_user }}"
-  api_password: "{{ proxmox_api_password }}"
-  api_host: "{{ proxmox_api_host }}"
-  api_port: "{{ proxmox_api_port }}"
+  api_user: 
+    - "{{ proxmox_api_user }}"
+  api_password: 
+    - "{{ proxmox_api_password }}"
+  api_host: 
+    - "{{ proxmox_api_host }}"
+  api_port: 
+    - "{{ proxmox_api_port }}"
   vmid: 400 # ID for the new VM
-  node: "{{ proxmox_vm_node }}"
-  name: "{{ proxmox_vm_name }}"
-  cores: "{{ proxmox_vm_cores }}"
-  memory: "{{ proxmox_vm_memory }}"
+  node: 
+    - "{{ proxmox_vm_node }}"
+  name: 
+    - "{{ proxmox_vm_name }}"
+  cores: 
+    - "{{ proxmox_vm_cores }}"
+  memory: 
+  - "{{ proxmox_vm_memory }}"
   disks:
-  - size: "{{ proxmox_vm_disk_size }}"
+  - size: 
+    - "{{ proxmox_vm_disk_size }}"
   storage: VMStorage # Storage pool for the disk
-  template: "{{ proxmox_vm_template }}"
+  template: 
+    - "{{ proxmox_vm_template }}"
   state: present
