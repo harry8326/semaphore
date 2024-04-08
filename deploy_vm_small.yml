@@ -22,3 +22,4 @@
         proxmox_default_behavior: no_defaults
         onboot: no
         netif: '{"net0":"name=eth0,gw=192.168.0.1,ip=dhcp,bridge=vmbr2"}'
+        state: present
