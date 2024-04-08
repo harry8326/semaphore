@@ -8,6 +8,7 @@
         api_host: "{{ proxmox_api_host }}"
         password: "{{ proxmox_lxc_password }}"
         hostname: "{{ proxmox_vm_name }}"
+        vmid: "{{ proxmox_vm_vmid }}"
         cores: "{{ proxmox_vm_cores }}"
         memory: "{{ proxmox_vm_memory }}"
         swap: 512
