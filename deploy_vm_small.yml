@@ -1,3 +1,4 @@
+- name: Clone VM
   community.general.proxmox_kvm:
     api_host: "{{ proxmox_api_host }}"
     api_user: "{{ proxmox_api_user }}"
