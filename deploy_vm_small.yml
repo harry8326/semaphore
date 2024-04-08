@@ -5,7 +5,7 @@
     api_token_secret: "{{ proxmox_api_password }}"
     clone: 8000
     name: {{ proxmox_vm_template }}
-    node: {{{ proxmox_vm_node}}
+    node: {{ proxmox_vm_node}}
     storage: VMStorage
     format: qcow2
     full: true
