@@ -20,5 +20,5 @@
         ostemplate: 'local:vztmpl/ubuntu-23.10-standard_23.10-1_amd64.tar.zst'
         proxmox_default_behavior: no_defaults
         onboot: no
-        netif: '{"net0":"name=eth0,gw="{{ proxmox_lxc_gateway }}",ip=dhcp,bridge=vmbr2"}'
+        netif: '{"net0":"name=eth0,gw=192.168.0.1,ip=dhcp,bridge=vmbr2"}'
         state: present
