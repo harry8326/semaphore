@@ -1,11 +1,18 @@
+- name: List VMs on Host
+  community.general.proxmox_vm_info:
+    api_host: "{{ proxmox_api_host }}"
+    api_user: "{{ proxmox_api_user }}"
+    api_token_secret: "{{ proxmox_api_password }}""
+    node: "{{ proxmox_vm_node }}"
+
 - name: Clone VM
   community.general.proxmox_kvm:
     api_host: "{{ proxmox_api_host }}"
     api_user: "{{ proxmox_api_user }}"
     api_token_secret: "{{ proxmox_api_password }}"
     clone: 8000
-    name: {{ proxmox_vm_template }}
-    node: {{ proxmox_vm_node}}
+    name: "{{ proxmox_vm_template }}"
+    node: "{{ proxmox_vm_node }}"
     storage: VMStorage
     format: qcow2
     full: true
