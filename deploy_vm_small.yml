@@ -1,12 +1,21 @@
-- name: Clone VM
+- hosts: proxmox
   tasks:
-  community.general.proxmox_kvm:
-    api_host: "{{ proxmox_api_host }}"
-    api_user: "{{ proxmox_api_user }}"
-    api_token_secret: "{{ proxmox_api_password }}"
-    clone: 8000
-    name: "{{ proxmox_vm_template }}"
-    node: "{{ proxmox_vm_node }}"
-    storage: VMStorage
-    format: qcow2
-    full: true
+    - name: Create container for PVE
+      community.general.proxmox:
+        node: "{{ proxmox_vm_node }}"
+        api_user: "{{ proxmox_api_user }}"
+        api_password: "{{ proxmox_api_password }}"
+        api_host: "{{ proxmox_api_host }}"
+        password: "{{ proxmox_lxc_password }}"
+        hostname: "{{ proxmox_vm_name }}"
+        cores: "{{ proxmox_vm_cores }}"
+        memory: "{{ proxmox_vm_memory }}"
+        swap: 512
+        disk: "{{ proxmox_vm_disk_size }}"
+        storage: VMStorage
+        unprivileged: yes
+        description: Container with Ansible
+        ostemplate: 'local:ubuntu-23.04-standard_23.04-1_amd64.tar.zst'
+        proxmox_default_behavior: no_defaults
+        onboot: no
+        netif: '{"net0":"name=eth0,gw=192.168.0.1,ip=dhcp,bridge=vmbr2"}'
