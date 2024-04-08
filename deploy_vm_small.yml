@@ -13,7 +13,7 @@
         vmid: "{{ proxmox_lxc_vmid }}"
         cores: "{{ proxmox_lxc_cores }}"
         memory: "{{ proxmox_lxc_memory }}"
-        swap: 512
+        swap: '512'
         storage: local-zfs
         disk: "{{ proxmox_lxc_disk_size }}"
         unprivileged: yes
