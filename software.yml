@@ -1,4 +1,4 @@
-- name: Softwareinstall & Settings
+- name: Agent & Timezone
   hosts: all
   ignore_unreachable: yes
   
