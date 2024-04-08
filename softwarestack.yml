@@ -1,0 +1,10 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache and make sure Nano and Curl are installed
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - curl
+        - nano
