@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: new
   become: yes
   tasks:
     - name: Update apt cache and make sure Nano and Curl are installed
@@ -8,3 +8,4 @@
       loop:
         - curl
         - nano
+        - 
