@@ -14,8 +14,7 @@
         cores: "{{ proxmox_lxc_cores }}"
         memory: "{{ proxmox_lxc_memory }}"
         swap: 512
-        disk: "{{ proxmox_lxc_disk_size }}"
-        storage: 'VMStorage'
+        disk: VMStorage: "{{ proxmox_lxc_disk_size }}"
         unprivileged: yes
         description: Container with Ansible
         ostemplate: 'local:vztmpl/ubuntu-23.04-standard_23.04-1_amd64.tar.zst'
