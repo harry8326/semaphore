@@ -1,4 +1,5 @@
 - hosts: proxmox
+  become: true
   tasks:
     - name: Create container for PVE
       community.general.proxmox:
