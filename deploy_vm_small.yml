@@ -14,7 +14,7 @@
         cores: "{{ proxmox_lxc_cores }}"
         memory: "{{ proxmox_lxc_memory }}"
         swap: '512'
-        storage: local-zfs
+        storage: 'VMStorage'
         disk: "{{ proxmox_lxc_disk_size }}"
         unprivileged: yes
         description: Container with Ansible
